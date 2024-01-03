@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error Handling</title>
+  </head>
+  <body>
+    <script>
+      function slideshow(slides) {
+        if (!Array.isArray(slides)) {
+          throw RangeError('Slides not valid')
+        }
+      }
+    </script>
+
+    <script>
+      console.log('Salam')
+
+      try {
+        slideshow('http://slide1.png')
+      } catch (error) {
+        console.log(error instanceof SyntaxError)
+        console.log(typeof error)
+        console.log(error.message)
+        console.log(error.name)
+        console.log(error.stack)
+      } finally {
+        console.log('Finally')
+      }
+
+      console.log('Bye')
+    </script>
+  </body>
+</html>

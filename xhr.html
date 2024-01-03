@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XHR</title>
+  </head>
+  <body>
+    <h2 id="name"></h2>
+
+    <script>
+      //   var url = 'https://jsonplaceholder.typicode.com/users/1'
+      var url = 'http://localhost:4000'
+      //   var url = 'https://api.digikala.com/v1/product/12085945/'
+
+      var xhr = new XMLHttpRequest()
+
+      //   xhr.onreadystatechange = function () {
+      //     console.log('onreadystatechange', xhr.readyState)
+      //   }
+
+      xhr.open('GET', url)
+
+      xhr.send()
+
+      xhr.onload = function () {
+        console.log(xhr.status)
+
+        var data = JSON.parse(this.responseText)
+
+        console.log(data)
+
+        var h2 = document.getElementById('name')
+        h2.textContent = data.name
+      }
+
+      xhr.onerror = function () {
+        console.log('Error')
+      }
+    </script>
+  </body>
+</html>
