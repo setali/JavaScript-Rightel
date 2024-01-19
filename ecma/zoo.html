@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zoo</title>
+  </head>
+  <body>
+    <script>
+      class Animal {
+        constructor(type) {
+          this.type = type
+        }
+
+        eat() {
+          console.log('HUM HUM')
+        }
+      }
+
+      class Cat extends Animal {
+        constructor(descent) {
+          super('CAT')
+          this.descent = descent
+        }
+
+        eat() {
+          super.eat()
+          console.log('HOOM HOOM')
+        }
+
+        speak() {
+          console.log('MU MU')
+        }
+      }
+
+      class PersianCat extends Cat {
+        constructor(name, weight) {
+          super('PERSIAN')
+          this.name = name
+          this.weight = weight
+        }
+
+        attack() {
+          super.eat()
+          console.log('Attack!!!')
+        }
+
+        static prop = 'Ali'
+      }
+
+      PersianCat.myProp = 'Qoli'
+
+      const pc = new PersianCat('Kitty', 5)
+
+      console.log(pc instanceof PersianCat)
+      console.log(pc instanceof Cat)
+      console.log(pc instanceof Animal)
+      console.log(pc instanceof Object)
+      console.log(pc instanceof Array)
+      console.log(pc instanceof String)
+
+      //   console.log(pc)
+      //   console.log(PersianCat.prop)
+      //   console.log(PersianCat.myProp)
+      //   pc.__proto__ = { name: 'Ali' }
+
+      //   pc.speak()
+      //   pc.attack()
+
+      //   const cat = new Cat('PERSIAN')
+
+      //   console.log(cat)
+      //   cat.eat()
+      //   cat.speak()
+
+      //   const animal = new Animal('CAT')
+
+      //   console.log(animal)
+      //   animal.eat()
+    </script>
+  </body>
+</html>

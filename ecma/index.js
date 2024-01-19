@@ -1,3 +1,236 @@
+const sym = Symbol()
+
+const person = {
+  name: 'Ali',
+  family: 'Mousavi',
+  age: 34,
+  [Symbol.toPrimitive] (hint) {
+    if (hint === 'number') {
+      return this.age
+    }
+
+    if (hint === 'string') {
+      return `${this.name} ${this.family}`
+    }
+  }
+}
+
+console.log(+person)
+console.log(String(person))
+
+// const sym = Symbol()
+
+// const propertyName = 'age'
+
+// const obj = {
+//   name: 'Ali',
+//   [sym]: 'Qoli',
+//   [propertyName]: 34
+// }
+
+// console.log(obj)
+
+// console.log(obj[propertyName])
+
+// console.log(obj[sym])
+
+// console.log(JSON.stringify(obj))
+
+// for (const key in obj) {
+//   console.log(key)
+// }
+
+// console.log(obj[sym])
+
+// const person = {
+//   family: {
+//     father: {
+//       name: 'Mohhamd'
+//       // getFamily: () => 'Mousavi'
+//     }
+//   }
+// }
+
+// console.log(person.family?.father?.getFamily?.())
+// console.log(person.family?.father?.name)
+
+// console.log(person.family && person.family.father && person.family.father.name)
+
+// const el = false
+// console.log(el ?? 'salam')
+
+// const map = new Map()
+
+// map.set('name', 'Ali')
+// map.set('family', 'Mousavi')
+// map.set(NaN, 10)
+
+// console.log(map.get(NaN))
+
+// map.set(NaN, 20)
+
+// console.log(map)
+
+// for (const el of map) {
+//   console.log(el)
+// }
+
+// function Person (name, family, age) {
+//   this.name = name
+//   this.family = family
+//   this.age = age
+//   this.getFullName = () => `${this.name} ${this.family}`
+// }
+
+// class Person {
+//   city = 'Shiraz'
+
+//   constructor (name, family, age) {
+//     this.name = name
+//     this.family = family
+//     this.age = age
+//   }
+
+//   getFullName () {
+//     return `${this.name} ${this.family}`
+//   }
+// }
+
+// const ali = new Person('Ali', 'Mousavi', 34)
+
+// console.log(ali.getFullName())
+// console.log(ali.city)
+
+// function delay (time) {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve()
+//     }, time * 1000)
+//   })
+// }
+
+// const arr = [0, 1, 2, 3, 4]
+
+// async function func () {
+//   // arr.forEach(async i => {
+//   //   await delay(1)
+//   //   console.log(i)
+//   // }) //  Not work
+
+//   for (let i = 0; i < 5; i++) {
+//     console.log(i)
+//     await delay(1)
+//   }
+// }
+
+// func()
+
+// article/20
+
+// async function get (req, res) {
+//   const { id } = req.params
+
+//   const article = await pg.find({ id })
+
+//   if (!article) {
+//     throw new Error('Not found')
+//   }
+// }
+
+// function ErrorHandler(err) {
+//   logToDb()
+// }
+
+// async function action(req, res) {
+//   const data = await pg.get()
+//   await logToMongo()
+//   await sendSMS()
+//   throw new Error()
+// }
+
+// action().then().catch()
+
+// function pow (a, b) {
+//   return new Promise((resolve, reject) => {
+//     resolve(a ** b)
+//   })
+// }
+
+// function delay (time) {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve()
+//     }, time * 1000)
+//   })
+// }
+
+// const data = pow(2, 4)
+// console.log(data)
+// delay(1)
+// const data1 = pow(4, 3)
+// console.log(data1)
+// delay(2)
+// const data2 = pow(5, 2)
+// console.log(data2)
+
+// setTimeout(() => {
+//   console.log('Ali')
+// }, 1000)
+
+// setTimeout(() => {
+//   console.log('Eli')
+// }, 1000)
+
+// async function func () {
+//   const data = await pow(2, 4)
+//   console.log(data)
+//   await delay(1)
+//   const data1 = await pow(4, 3)
+//   console.log(data1)
+//   await delay(2)
+//   const data2 = await pow(5, 2)
+//   console.log(data2)
+//   return data2
+// }
+
+// console.log(1)
+// func().then(data2 => console.log({ data2 }))
+// console.log(2)
+// pow(2, 4)
+//   .then(data => {
+//     console.log(data)
+//     return delay(1)
+//   })
+//   .then(() => pow(4, 3))
+//   .then(data => {
+//     console.log(data)
+//     return delay(2)
+//   })
+//   .then(() => pow(5, 2))
+//   .then(data => console.log(data))
+
+// function prom (n) {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve(n ** 2)
+//     }, 1000)
+//   })
+// }
+
+// async function prom (n) {
+//   if (n) {
+//     return n ** 2
+//   } else {
+//     throw new Error('Salam')
+//   }
+// }
+
+// console.log(prom())
+
+// prom(0)
+//   .then(data => console.log(data))
+//   .catch(err => console.log(err))
+
 // function request (url, method, cb) {
 //   const xhr = new XMLHttpRequest()
 //   xhr.open(method, url)
@@ -45,7 +278,7 @@
 // }
 
 // const url = 'https://jsonplaceholder.typicode.com/users/1'
-const url = 'https://jsonplaceholder.typicode.com/'
+// const url = 'https://jsonplaceholder.typicode.com/'
 
 // fetch(url)
 //   .then(response => response.json())
@@ -56,18 +289,18 @@ const url = 'https://jsonplaceholder.typicode.com/'
 //   .then(response => console.log(response.data))
 //   .catch(err => console.log(err))
 
-function axios (url) {
-  return new Promise((resolve, reject) => {
-    fetch(url)
-      .then(response => response.json())
-      .then(data => resolve({ data }))
-      .catch(reject)
-  })
-}
+// function axios (url) {
+//   return new Promise((resolve, reject) => {
+//     fetch(url)
+//       .then(response => response.json())
+//       .then(data => resolve({ data }))
+//       .catch(reject)
+//   })
+// }
 
-axios(url)
-  .then(({ data }) => console.log(data))
-  .catch(console.log)
+// axios(url)
+//   .then(({ data }) => console.log(data))
+//   .catch(console.log)
 
 // request(url, 'GET', (err, data) => {
 //   if (err) {
