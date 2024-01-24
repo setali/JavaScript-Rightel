@@ -1,3 +1,5 @@
+import { COLUMNS } from "../utils/constants"
+
 class User {
   constructor ({ id, username, email, address: _address }) {
     this.id = id
@@ -48,3 +50,5 @@ class User {
     return action
   }
 }
+
+export default User

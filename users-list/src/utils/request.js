@@ -6,3 +6,5 @@ function request (url) {
       .catch(reject)
   })
 }
+
+export default request
