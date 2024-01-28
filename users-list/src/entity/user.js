@@ -1,4 +1,4 @@
-import { COLUMNS } from "../utils/constants"
+import { COLUMNS } from '../utils/constants'
 
 class User {
   constructor ({ id, username, email, address: _address }) {
