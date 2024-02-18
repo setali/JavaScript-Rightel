@@ -1,8 +1,14 @@
 import React from 'react'
 // import Users from './8-Stateless'
 // import ClassVsFunction from './9-ClassVsFunction'
-import UseState from './10-UseState'
-import UseEffect from './11-UseEffect'
+// import UseState from './10-UseState'
+// import UseEffect from './11-UseEffect'
+// import AdvanceUseState from './12-AdvanceUseState'
+// import HookRules from './13-HookRules'
+// import CustomHook from './14-CustomHook'
+// import HOC from './15-HOC/App'
+// import TodosUseState from './16-TodosUseState'
+import UseReducer from './17-UseReducer'
 // import Counter from './1-Counter'
 // import Users from './2-Users'
 // import UnMounting from './3-UnMounting'
@@ -16,7 +22,13 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <UseEffect />
+        <UseReducer />
+        {/* <TodosUseState /> */}
+        {/* <HOC /> */}
+        {/* <CustomHook /> */}
+        {/* <HookRules /> */}
+        {/* <AdvanceUseState /> */}
+        {/* <UseEffect /> */}
         {/* <UseState /> */}
         {/* <ClassVsFunction /> */}
         {/* <Users /> */}
