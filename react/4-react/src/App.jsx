@@ -10,11 +10,12 @@ import React from 'react'
 // import TodosUseState from './16-TodosUseState'
 // import UseReducer from './17-UseReducer'
 // import TodosUseReducer from './18-TodosUseReducer'
-import Parent from './19-UseMemo'
-import MemoParent from './20-Memo'
-import UseRef from './21-UseRef'
-import UseCallBack from './22-UseCallBack'
-import LazyLoad from './23-Lazy/Main'
+// import Parent from './19-UseMemo'
+// import MemoParent from './20-Memo'
+// import UseRef from './21-UseRef'
+// import UseCallBack from './22-UseCallBack'
+// import LazyLoad from './23-Lazy/Main'
+import ContextApp from './24-context/App'
 // import Counter from './1-Counter'
 // import Users from './2-Users'
 // import UnMounting from './3-UnMounting'
@@ -28,7 +29,8 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <LazyLoad />
+        <ContextApp />
+        {/* <LazyLoad /> */}
         {/* <UseCallBack /> */}
         {/* <UseRef /> */}
         {/* <MemoParent /> */}

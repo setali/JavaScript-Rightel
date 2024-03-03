@@ -1,0 +1,27 @@
+.main {
+  display: flex;
+}
+
+.box {
+  border: 1px solid;
+  margin: 0.5rem;
+  padding: 1rem;
+}
+.content {
+  flex: 5;
+}
+
+.sidebar {
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logout {
+  color: red;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
