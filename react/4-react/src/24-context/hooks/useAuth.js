@@ -14,10 +14,10 @@ export default function useAuth () {
 
   function login () {
     setIsLoading(true)
-    request('/users/1')
+    request('/users', { method: 'post' })
       .then(({ data }) => {
-        logon(data)
         setToken(data.email)
+        getUser()
       })
       .finally(() => setIsLoading(false))
   }

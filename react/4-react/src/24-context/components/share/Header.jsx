@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
 import ThemeContext from '../../contexts/ThemeContext'
 import AuthContext from '../../contexts/AuthContext'
+import { Link } from 'react-router-dom'
 
 export default function Header () {
   const theme = useContext(ThemeContext)
-  const { login, isLoading, isLoggedIn, user, logout } = useContext(AuthContext)
+  const { isLoading, isLoggedIn, user, logout } = useContext(AuthContext)
 
   return (
     <div className='box header' style={theme}>
@@ -12,7 +13,9 @@ export default function Header () {
       <div>
         {isLoggedIn ? (
           <span>
-            <span>{user.name}</span>
+            <span>
+              <Link to='/profile'>{user.name}</Link>
+            </span>
             <span className='logout' onClick={logout}>
               Logout
             </span>
@@ -20,7 +23,7 @@ export default function Header () {
         ) : isLoading ? (
           <span>Loading ...</span>
         ) : (
-          <span onClick={login}>Login</span>
+          <Link to='/login'>Login</Link>
         )}
       </div>
     </div>

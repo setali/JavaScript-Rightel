@@ -25,3 +25,11 @@
   margin-left: 0.5rem;
   cursor: pointer;
 }
+
+.form-item {
+  margin: 1rem;
+}
+
+.active {
+  color: green;
+}

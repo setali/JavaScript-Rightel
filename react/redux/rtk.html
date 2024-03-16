@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redux</title>
+  </head>
+  <body>
+    <span id="value"></span>
+
+    <button id="inc">+</button>
+    <button id="inc2">+2</button>
+    <button id="dec">-</button>
+
+    <script src="https://unpkg.com/@reduxjs/toolkit@1.9.2/dist/redux-toolkit.umd.js"></script>
+
+    <script>
+      const increase = RTK.createAction('INC')
+      const decrease = RTK.createAction('DEC')
+
+      const reducer = RTK.createReducer(1, builder => {
+        builder.addCase(increase, (state, { payload }) => state + payload)
+        builder.addCase(decrease, (state, { payload }) => state - payload)
+      })
+
+      const { dispatch, getState, subscribe } = RTK.configureStore({ reducer })
+
+      function render() {
+        document.getElementById('value').innerText = getState()
+      }
+
+      render()
+      subscribe(render)
+
+      document.getElementById('inc').addEventListener('click', () => {
+        dispatch(increase(1))
+      })
+
+      document.getElementById('inc2').addEventListener('click', () => {
+        dispatch(increase(2))
+      })
+
+      document.getElementById('dec').addEventListener('click', () => {
+        dispatch(decrease(1))
+      })
+    </script>
+  </body>
+</html>

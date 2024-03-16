@@ -1,10 +1,9 @@
-import React, { useContext } from 'react'
-import ThemeContext from '../../contexts/ThemeContext'
-import AuthContext from '../../contexts/AuthContext'
+import useAuthContext from '../../hooks/useAuthContext'
+import useThemeContext from '../../hooks/useThemeContext'
 
 export default function Home () {
-  const theme = useContext(ThemeContext)
-  const { user, isLoggedIn } = useContext(AuthContext)
+  const theme = useThemeContext()
+  const { user, isLoggedIn } = useAuthContext()
 
   return (
     <div className='content box' style={theme}>
